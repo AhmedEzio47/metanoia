@@ -1,30 +1,28 @@
-import 'dart:collection';
-
 import 'package:flutter/foundation.dart';
 import 'package:metanoia/models/product_model.dart';
 
 class CartModel extends ChangeNotifier {
-  /// Internal, private state of the cart.
-  final List<Product> _items = [];
-
-  /// An unmodifiable view of the items in the cart.
-  UnmodifiableListView<Product> get items => UnmodifiableListView(_items);
+  Map<Product, int> get items => _items;
 
   /// The current total price of all items (assuming all items cost $42).
-  int get totalPrice => _items.length * 42;
+  int get totalPrice => _totalPrice;
+  Map<Product, int> _items = Map();
 
-  /// Adds [item] to cart. This and [removeAll] are the only ways to modify the
-  /// cart from the outside.
+  int _totalPrice = 0;
+
   void add(Product item) {
-    _items.add(item);
-    // This call tells the widgets that are listening to this model to rebuild.
+    _totalPrice += item.price;
+    if (_items.containsKey(item)) {
+      _items[item]++;
+    } else {
+      _items.putIfAbsent(item, () => 1);
+    }
     notifyListeners();
   }
 
-  /// Removes all items from the cart.
-  void removeAll() {
+  void clear() {
+    _totalPrice = 0;
     _items.clear();
-    // This call tells the widgets that are listening to this model to rebuild.
     notifyListeners();
   }
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "54811225398",
+    "project_id": "metanoia-260e0",
+    "storage_bucket": "metanoia-260e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54811225398:android:02cea8d05e0e0dd9e29797",
+        "android_client_info": {
+          "package_name": "com.devyat.metanoia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "54811225398-9141jt56pb64v8b8j463mff8idd6o3cv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj6QBYAP3azAlSRdEQGnspm4FTX_iueOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "54811225398-9141jt56pb64v8b8j463mff8idd6o3cv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
